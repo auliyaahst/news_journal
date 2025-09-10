@@ -43,7 +43,7 @@ export default function SignUpPage() {
 
       setSuccess(true)
       setTimeout(() => {
-        router.push('/login?message=Account created successfully')
+        router.push('/')
       }, 2000)
 
     } catch (err) {
@@ -107,7 +107,7 @@ export default function SignUpPage() {
                 required
                 value={formData.name}
                 onChange={(e) => setFormData(prev => ({...prev, name: e.target.value}))}
-                className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-3 text-gray-700 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-400"
                 placeholder="Type your name here"
               />
             </div>
@@ -119,7 +119,7 @@ export default function SignUpPage() {
                 required
                 value={formData.email}
                 onChange={(e) => setFormData(prev => ({...prev, email: e.target.value}))}
-                className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-3 text-gray-700 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-400"
                 placeholder="Type your email here"
               />
             </div>
@@ -131,7 +131,7 @@ export default function SignUpPage() {
                 required
                 value={formData.password}
                 onChange={(e) => setFormData(prev => ({...prev, password: e.target.value}))}
-                className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-3 text-gray-700 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-400"
                 placeholder="Type your password here"
               />
             </div>
@@ -143,7 +143,7 @@ export default function SignUpPage() {
                 required
                 value={formData.passwordConfirm}
                 onChange={(e) => setFormData(prev => ({...prev, passwordConfirm: e.target.value}))}
-                className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-3 text-gray-700 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-400"
                 placeholder="Re-type your password here"
               />
             </div>
@@ -172,6 +172,14 @@ export default function SignUpPage() {
               {isLoading ? 'Creating Account...' : 'Register'}
             </button>
           </form>
+        <div className="mt-6 text-center">
+            <p className="text-sm text-gray-600">
+              Already have an account?{' '}
+              <Link href="/" className="text-blue-600 hover:underline font-medium">
+                Sign in
+              </Link>
+            </p>
+          </div>
         </div>
 
         <div className="text-center">
